@@ -1,0 +1,131 @@
+
+/* general styles */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding-top: 50px;
+}
+/* padded section */
+.pad-section {
+    padding: 100px 0;
+}
+.pad-section img {
+    width: 100%;
+}
+
+/* vertical-centered text */
+.text-vcenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.text-vcenter h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+/* additional sections */
+#home {
+    background: url(http://lorempixel.com/1200/800/nature/) no-repeat center center fixed;
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    padding: 40px 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#about {
+}
+
+#services {
+    background-color: #306d9f;
+    color: #ffffff;
+}
+#services .glyphicon {
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 60px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    vertical-align: middle;
+    width: 140px;
+}
+
+#information {
+    background: url(http://lorempixel.com/1200/800/nature/1) no-repeat center center fixed;
+    display: table;
+    height: 800px;
+    position: relative;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#information .panel {
+    opacity: 0.85;
+}
+
+footer {
+    padding: 20px 0;
+}
+footer .glyphicon {
+    color: #333333;
+    font-size: 60px;
+}
+footer .glyphicon:hover {
+    color: #306d9f;
+}
+
+
+
+
+nav .navbar-toggle {
+    margin: 13px 15px 13px 0;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    height: auto;
+}
+
+nav.navbar.shrink {
+    min-height: 35px;
+}
+
+nav.shrink a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-size: 15px;
+}
+
+nav.shrink .navbar-brand {
+    font-size: 25px;
+}
+
+nav.shrink .navbar-toggle {
+    padding: 4px 5px;
+    margin: 8px 15px 8px 0;
+}
+
+nav.navbar, .navbar-brand{
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+@media (min-width: 992px) {
+    .pull-right-sm {
+        float: right;
+    }
+}

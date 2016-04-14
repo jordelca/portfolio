@@ -64,6 +64,12 @@ fos_user:
     firewall_name: main
     user_class: UserBundle\Entity\User
 
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"

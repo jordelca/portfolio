@@ -1,3 +1,5 @@
+/web
+!web/assets/vendors
 /app/config/parameters.yml
 /build/
 /phpunit.xml
