@@ -8,11 +8,9 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/")
-     */
+
     public function indexAction()
     {
-        return new RedirectResponse($this->generateUrl('fos_user_security_login'));
+        return new RedirectResponse($this->generateUrl('homepage'));
     }
 }
