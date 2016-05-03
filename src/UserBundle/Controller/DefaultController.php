@@ -9,8 +9,4 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class DefaultController extends Controller
 {
 
-    public function indexAction()
-    {
-        return new RedirectResponse($this->generateUrl('homepage'));
-    }
 }

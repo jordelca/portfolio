@@ -1,12 +1,39 @@
+app_portfolio_entry:
+    resource: "@AppBundle/Controller/PortfolioEntryController.php"
+    type:     annotation
+
+app_tech_skill:
+    resource: "@AppBundle/Controller/TechSkillController.php"
+    type:     annotation
+
+app_company:
+    resource: "@AppBundle/Controller/CompanyController.php"
+    type:     annotation
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%/
+        permanent: true
+
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements:
+        _locale: es|en
 
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}/
+    requirements:
+        _locale: es|en
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: es|en
+

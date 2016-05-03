@@ -16,6 +16,22 @@ body {
     width: 100%;
 }
 
+.lang-switcher a{
+    float:left;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.lang-switcher a:after{
+    content: " |";
+}
+
+.lang-switcher a:last-child:after
+{
+    content: '';
+}
+
+
 /* vertical-centered text */
 .text-vcenter {
     display: table-cell;
