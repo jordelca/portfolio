@@ -21,13 +21,25 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#">
+                        <div class="useravatar" hidden>
+                            <img alt="" src="{{ asset('bundles/app/img/jorge.png') }}">
+                            <span> Jorge Delgado</span>
+                        </div>
+                    </a>
                 </div>
                 <div id="nav-main" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav pull-right-sm">
-                        <li class="lang-switcher"><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">Es</a><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">En</a></li>
+                        {% if ( app.request.getLocale() == 'en') %}
+                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">Spanish</a></li>
+                        {% elseif ( app.request.getLocale() == 'es') %}
+                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">Inglés</a></li>
+                        {% endif %}
+
+
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->

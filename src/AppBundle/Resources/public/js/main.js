@@ -1,8 +1,10 @@
 $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
+    if ($(document).scrollTop() > 315) {
         $('nav').addClass('shrink');
+        $('.navbar-brand .useravatar').removeAttr('hidden');
     } else {
         $('nav').removeClass('shrink');
+        $('.navbar-brand .useravatar').attr('hidden', 'hidden');
     }
 });
 
