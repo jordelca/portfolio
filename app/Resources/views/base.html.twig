@@ -70,7 +70,6 @@
         {% block javascripts %}
 
             {% javascripts  'assets/vendor/jquery/dist/jquery.min.js'
-                            'assets/vendor/jquery-lazyload/jquery.lazyload.js'
                             'assets/vendor/bootstrap/dist/js/bootstrap.min.js'
                             '@AppBundle/Resources/public/js/*' filter='?uglifyjs2' %}
             <script src="{{ asset_url }}"></script>
