@@ -6,7 +6,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-            {% stylesheets '@AppBundle/Resources/public/css/*' filter='cssrewrite, uglifycss' %}
+            {% stylesheets '@AppBundle/Resources/public/css/*' filter='cssrewrite, ?uglifycss' %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
@@ -31,16 +31,22 @@
                 <div id="nav-main" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav pull-right-sm">
                         {% if ( app.request.getLocale() == 'en') %}
-                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">Spanish</a></li>
+                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">{{ 'header.spanish' | trans({}, 'messages') }}</a></li>
                         {% elseif ( app.request.getLocale() == 'es') %}
-                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">Inglés</a></li>
+                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">{{ 'header.english' | trans({}, 'messages') }}</a></li>
                         {% endif %}
 
 
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="{{ path('homepage') }}">{{ 'header.home' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('education') }}>{{ 'header.education' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('jobs') }}>{{ 'header.jobs' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('portfolio') }}>{{ 'header.portfolio' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('contact') }}>{{ 'header.contact' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('getpdf') }}>{{ 'header.getpdf' | trans({}, 'messages') }}</a></li>
+                        {% if app.user %}
+                            <li><a href="{{ path('fos_user_security_logout') }}">{{ 'header.logout' | trans({}, 'messages') }}</a></li>
+                        {% endif %}
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -64,8 +70,9 @@
         {% block javascripts %}
 
             {% javascripts  'assets/vendor/jquery/dist/jquery.min.js'
+                            'assets/vendor/jquery-lazyload/jquery.lazyload.js'
                             'assets/vendor/bootstrap/dist/js/bootstrap.min.js'
-                            '@AppBundle/Resources/public/js/*' filter='uglifyjs2' %}
+                            '@AppBundle/Resources/public/js/*' filter='?uglifyjs2' %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock %}
