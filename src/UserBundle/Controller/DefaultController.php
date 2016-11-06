@@ -21,7 +21,7 @@ class DefaultController extends BaseController
         {
 
             // redirect authenticated users to homepage
-            return $this->redirect($this->generateUrl('homepage'));
+            return $this->redirect($this->generateUrl('admin_homepage'));
         }
 
         $response = BaseController::loginAction($request);

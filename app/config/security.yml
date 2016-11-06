@@ -22,6 +22,7 @@ security:
                 login_path:   fos_user_security_login
                 check_path:   fos_user_security_check
                 csrf_token_generator: security.csrf.token_manager
+                default_target_path: admin_homepage
 
             logout:
                 path: fos_user_security_logout
@@ -31,7 +32,7 @@ security:
         - { path: ^/[^/]+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/[^/]+/register, role: ROLE_SUPER_ADMIN }
         - { path: ^/[^/]+/resetting, role: ROLE_SUPER_ADMIN }
-        - { path: ^/[^/]+/admin/, role: ROLE_USER }
+        - { path: ^/[^/]+/admin, role: ROLE_USER }
         - { path: ^/[^/]+/, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
 

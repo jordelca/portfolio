@@ -1,3 +1,4 @@
+
 app_portfolio_entry:
     resource: "@AppBundle/Controller/PortfolioEntryController.php"
     type:     annotation
@@ -26,6 +27,13 @@ user:
 
 app:
     resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/
+    requirements:
+        _locale: es|en
+
+admin:
+    resource: "@AdminBundle/Controller/"
     type:     annotation
     prefix:   /{_locale}/
     requirements:
