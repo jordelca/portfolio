@@ -18,15 +18,14 @@ root:
         path: /%locale%/
         permanent: true
 
-user:
-    resource: "@UserBundle/Controller/"
-    type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix:   /{_locale}/
     requirements:
         _locale: es|en
 
-app:
-    resource: "@AppBundle/Controller/"
+user:
+    resource: "@UserBundle/Controller/"
     type:     annotation
     prefix:   /{_locale}/
     requirements:
@@ -39,9 +38,11 @@ admin:
     requirements:
         _locale: es|en
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    prefix:   /{_locale}/
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
     requirements:
         _locale: es|en
+
 

@@ -13,7 +13,46 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('AppBundle:Default:index.html.twig');
+    }
+
+    /**
+     * @Route("/education", name="education")
+     */
+    public function educationAction(Request $request)
+    {
+        return $this->render('@App/Default/index.html.twig');
+    }
+
+    /**
+     * @Route("/jobs", name="jobs")
+     */
+    public function jobsAction(Request $request)
+    {
+        return $this->render('@App/Default/index.html.twig');
+    }
+
+    /**
+     * @Route("/portfolio", name="portfolio")
+     */
+    public function portfolioAction(Request $request)
+    {
+        return $this->render('@App/Default/index.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contactAction()
+    {
+        return $this->render('@User/Default/contact.html.twig');
+    }
+
+    /**
+     * @Route("/getpdf", name="getpdf")
+     */
+    public function getPdfAction()
+    {
+        return $this->render('@User/Default/contact.html.twig');
     }
 }

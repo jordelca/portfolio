@@ -1,6 +1,7 @@
 {% extends 'backendbase.html.twig' %}
 
-{% block body %}
+
+{% block content %}
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -529,3 +530,12 @@
 
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <!-- AdminLTE App -->
+    <script src="{{  asset('theme/dist/js/app.min.js') }}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{  asset('theme/dist/js/pages/dashboard.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{  asset('theme/dist/js/demo.js') }}"></script>
+{% endblock %}

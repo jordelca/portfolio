@@ -38,7 +38,7 @@ class TechSkill
 
     /**
      * @var int
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PortfolioEntry", mappedBy="techSkills")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\PortfolioEntry", inversedBy="techSkills")
      */
     private $entries;
 
