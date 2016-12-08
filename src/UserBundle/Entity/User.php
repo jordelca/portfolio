@@ -18,7 +18,7 @@ class User extends BaseUser
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected   $id;
+    protected $id;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\PortfolioEntry", mappedBy="user", cascade={"remove"})
