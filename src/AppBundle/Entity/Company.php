@@ -31,36 +31,46 @@ class Company
     /**
      * @var string
      *
-     * @ORM\Column(name="address_street", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=255)
      */
-    private $addressStreet;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="adrdress_number", type="integer")
-     */
-    private $adrdressNumber;
+    private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="address_city", type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255)
      */
-    private $addressCity;
+    private $url;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="address_postcode", type="string", length=255)
+     * @ORM\Column(name="addressLine1", type="string", length=255)
      */
-    private $addressPostcode;
+    private $addressLine1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="addressLine2", type="string", length=255)
+     */
+    private $addressLine2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="postcode", type="string", length=255)
+     */
+    private $postcode;
 
     /**
      * @var int
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PortfolioEntry", mappedBy="company")
+     *
+     * @ORM\Column(name="city", type="integer")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\City")
      */
-    private $entries;
+    private $city;
+
     /**
      * Get id
      *
@@ -96,139 +106,147 @@ class Company
     }
 
     /**
-     * Set addressStreet
+     * Set description
      *
-     * @param string $addressStreet
+     * @param string $description
      *
      * @return Company
      */
-    public function setAddressStreet($addressStreet)
+    public function setDescription($description)
     {
-        $this->addressStreet = $addressStreet;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get addressStreet
+     * Get description
      *
      * @return string
      */
-    public function getAddressStreet()
+    public function getDescription()
     {
-        return $this->addressStreet;
+        return $this->description;
     }
 
     /**
-     * Set adrdressNumber
+     * Set url
      *
-     * @param integer $adrdressNumber
+     * @param string $url
      *
      * @return Company
      */
-    public function setAdrdressNumber($adrdressNumber)
+    public function setUrl($url)
     {
-        $this->adrdressNumber = $adrdressNumber;
+        $this->url = $url;
 
         return $this;
     }
 
     /**
-     * Get adrdressNumber
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set addressLine1
+     *
+     * @param string $addressLine1
+     *
+     * @return Address
+     */
+    public function setLine1($addressLine1)
+    {
+        $this->addressLine1 = $addressLine1;
+
+        return $this;
+    }
+
+    /**
+     * Get addressLine1
+     *
+     * @return string
+     */
+    public function getAddressLine1()
+    {
+        return $this->addressLine1;
+    }
+
+    /**
+     * Set addressLine2
+     *
+     * @param string $addressLine2
+     *
+     * @return Address
+     */
+    public function setAddressLine2($addressLine2)
+    {
+        $this->addressLine2 = $addressLine2;
+
+        return $this;
+    }
+
+    /**
+     * Get addressLine2
+     *
+     * @return string
+     */
+    public function getLine2()
+    {
+        return $this->addressLine2;
+    }
+
+    /**
+     * Set postcode
+     *
+     * @param string $postcode
+     *
+     * @return Address
+     */
+    public function setPostcode($postcode)
+    {
+        $this->postcode = $postcode;
+
+        return $this;
+    }
+
+    /**
+     * Get postcode
+     *
+     * @return string
+     */
+    public function getPostcode()
+    {
+        return $this->postcode;
+    }
+
+    /**
+     * Set city
+     *
+     * @param integer $city
+     *
+     * @return Address
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
      *
      * @return int
      */
-    public function getAdrdressNumber()
+    public function getCity()
     {
-        return $this->adrdressNumber;
-    }
-
-    /**
-     * Set addressCity
-     *
-     * @param string $addressCity
-     *
-     * @return Company
-     */
-    public function setAddressCity($addressCity)
-    {
-        $this->addressCity = $addressCity;
-
-        return $this;
-    }
-
-    /**
-     * Get addressCity
-     *
-     * @return string
-     */
-    public function getAddressCity()
-    {
-        return $this->addressCity;
-    }
-
-    /**
-     * Set addressPostcode
-     *
-     * @param string $addressPostcode
-     *
-     * @return Company
-     */
-    public function setAddressPostcode($addressPostcode)
-    {
-        $this->addressPostcode = $addressPostcode;
-
-        return $this;
-    }
-
-    /**
-     * Get addressPostcode
-     *
-     * @return string
-     */
-    public function getAddressPostcode()
-    {
-        return $this->addressPostcode;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->entries = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add entry
-     *
-     * @param \AppBundle\Entity\PortfolioEntry $entry
-     *
-     * @return Company
-     */
-    public function addEntry(\AppBundle\Entity\PortfolioEntry $entry)
-    {
-        $this->entries[] = $entry;
-
-        return $this;
-    }
-
-    /**
-     * Remove entry
-     *
-     * @param \AppBundle\Entity\PortfolioEntry $entry
-     */
-    public function removeEntry(\AppBundle\Entity\PortfolioEntry $entry)
-    {
-        $this->entries->removeElement($entry);
-    }
-
-    /**
-     * Get entries
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEntries()
-    {
-        return $this->entries;
+        return $this->city;
     }
 }
+

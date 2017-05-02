@@ -1,0 +1,49 @@
+{% extends 'backendbase.html.twig' %}
+
+{% block content %}
+    <h1>Educations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Finished</th>
+                <th>Educationcenter</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for education in educations %}
+            <tr>
+                <td><a href="{{ path('education_show', { 'id': education.id }) }}">{{ education.id }}</a></td>
+                <td>{{ education.name }}</td>
+                <td>{{ education.description }}</td>
+                <td>{% if education.startDate %}{{ education.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if education.endDate %}{{ education.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if education.finished %}Yes{% else %}No{% endif %}</td>
+                <td>{{ education.educationCenter }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('education_show', { 'id': education.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('education_edit', { 'id': education.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('education_new') }}">Create a new education</a>
+        </li>
+    </ul>
+{% endblock %}

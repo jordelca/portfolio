@@ -9,22 +9,15 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class CompanyType extends AbstractType
 {
     /**
-     * @param FormBuilderInterface $builder
-     * @param array $options
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('name')
-            ->add('addressStreet')
-            ->add('adrdressNumber')
-            ->add('addressCity')
-            ->add('addressPostcode')
-        ;
+        $builder->add('name')->add('description')->add('url')->add('addressLine1')->add('addressLine2')->add('postcode')->add('city')        ;
     }
     
     /**
-     * @param OptionsResolver $resolver
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -32,4 +25,14 @@ class CompanyType extends AbstractType
             'data_class' => 'AppBundle\Entity\Company'
         ));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return 'appbundle_company';
+    }
+
+
 }

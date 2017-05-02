@@ -21,7 +21,15 @@ class DefaultController extends Controller
      */
     public function educationAction(Request $request)
     {
-        return $this->render('@App/Default/index.html.twig');
+        return $this->render('@App/Education/index.html.twig');
+    }
+
+    /**
+     * @Route("/certifications", name="certifications")
+     */
+    public function certificationsAction(Request $request)
+    {
+        return $this->render('@App/Certifications/index.html.twig');
     }
 
     /**
@@ -29,15 +37,15 @@ class DefaultController extends Controller
      */
     public function jobsAction(Request $request)
     {
-        return $this->render('@App/Default/index.html.twig');
+        return $this->render('@App/Jobs/index.html.twig');
     }
 
     /**
-     * @Route("/portfolio", name="portfolio")
+     * @Route("/projects", name="projects")
      */
-    public function portfolioAction(Request $request)
+    public function projectsAction(Request $request)
     {
-        return $this->render('@App/Default/index.html.twig');
+        return $this->render('@App/Projects/index.html.twig');
     }
 
     /**
@@ -45,7 +53,7 @@ class DefaultController extends Controller
      */
     public function contactAction()
     {
-        return $this->render('@User/Default/contact.html.twig');
+        return $this->render('@User/Contact/index.html.twig');
     }
 
     /**
@@ -53,6 +61,6 @@ class DefaultController extends Controller
      */
     public function getPdfAction()
     {
-        return $this->render('@User/Default/contact.html.twig');
+        return $this->render('@User/Default/index.html.twig');
     }
 }

@@ -1,14 +1,45 @@
-
-app_portfolio_entry:
-    resource: "@AppBundle/Controller/PortfolioEntryController.php"
+app_profile:
+    resource: "@AppBundle/Controller/ProfileController.php"
     type:     annotation
 
-app_tech_skill:
-    resource: "@AppBundle/Controller/TechSkillController.php"
+app_skill:
+    resource: "@AppBundle/Controller/SkillController.php"
+    type:     annotation
+
+app_project:
+    resource: "@AppBundle/Controller/ProjectController.php"
+    type:     annotation
+
+app_job:
+    resource: "@AppBundle/Controller/JobController.php"
+    type:     annotation
+
+app_image:
+    resource: "@AppBundle/Controller/ImageController.php"
+    type:     annotation
+
+app_education_center:
+    resource: "@AppBundle/Controller/EducationCenterController.php"
+    type:     annotation
+
+app_education:
+    resource: "@AppBundle/Controller/EducationController.php"
+    type:     annotation
+
+app_country:
+    resource: "@AppBundle/Controller/CountryController.php"
     type:     annotation
 
 app_company:
     resource: "@AppBundle/Controller/CompanyController.php"
+    type:     annotation
+
+app_city:
+    resource: "@AppBundle/Controller/CityController.php"
+    type:     annotation
+
+app_certification:
+    resource: "@AppBundle/Controller/CertificationController.php"
     type:     annotation
 
 root:

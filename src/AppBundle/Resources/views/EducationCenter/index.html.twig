@@ -1,0 +1,53 @@
+{% extends 'backendbase.html.twig' %}
+
+{% block content %}
+    <h1>Educationcenters list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Logo</th>
+                <th>Url</th>
+                <th>Addressline1</th>
+                <th>Addressline2</th>
+                <th>Postcode</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for educationCenter in educationCenters %}
+            <tr>
+                <td><a href="{{ path('educationcenter_show', { 'id': educationCenter.id }) }}">{{ educationCenter.id }}</a></td>
+                <td>{{ educationCenter.name }}</td>
+                <td>{{ educationCenter.address }}</td>
+                <td>{{ educationCenter.logo }}</td>
+                <td>{{ educationCenter.url }}</td>
+                <td>{{ educationCenter.addressLine1 }}</td>
+                <td>{{ educationCenter.addressLine2 }}</td>
+                <td>{{ educationCenter.postcode }}</td>
+                <td>{{ educationCenter.city }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('educationcenter_show', { 'id': educationCenter.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('educationcenter_edit', { 'id': educationCenter.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('educationcenter_new') }}">Create a new educationCenter</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'backendbase.html.twig' %}
+
+{% block content %}
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <table>
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th>Firstname</th>
+                    <td>{{ user.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Lastname</th>
+                    <td>{{ user.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ user.description }}</td>
+                </tr>
+                <tr>
+                    <th>Birthdate</th>
+                    <td>{% if user.birthdate %}{{ user.birthdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{ user.city }}</td>
+                </tr>
+                <tr>
+                    <th>Linkedin</th>
+                    <td>{{ user.linkedin }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('profile_edit', { 'id': user.id }) }}">Edit</a>
+        </li>
+    </ul>
+{% endblock %}

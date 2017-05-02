@@ -28,7 +28,21 @@ class DefaultController extends BaseController
         return $response;
     }
 
+    /**
+         * @Route("/user/profile", name="profile_show")
+     */
+    public function showAction(Request $request)
+    {
 
+    }
+
+    /**
+     * @Route("/user/edit", name="profile_edit")
+     */
+    public function editAction(Request $request)
+    {
+
+    }
 
 
     

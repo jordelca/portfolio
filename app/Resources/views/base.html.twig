@@ -39,8 +39,9 @@
 
                         <li><a href="{{ path('homepage') }}">{{ 'header.home' | trans({}, 'messages') }}</a></li>
                         <li><a href={{ path('education') }}>{{ 'header.education' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('certifications') }}>{{ 'header.certifications' | trans({}, 'messages') }}</a></li>
                         <li><a href={{ path('jobs') }}>{{ 'header.jobs' | trans({}, 'messages') }}</a></li>
-                        <li><a href={{ path('portfolio') }}>{{ 'header.portfolio' | trans({}, 'messages') }}</a></li>
+                        <li><a href={{ path('projects') }}>{{ 'header.portfolio' | trans({}, 'messages') }}</a></li>
                         <li><a href={{ path('contact') }}>{{ 'header.contact' | trans({}, 'messages') }}</a></li>
                         <li><a href={{ path('getpdf') }}>{{ 'header.getpdf' | trans({}, 'messages') }}</a></li>
                         {% if app.user %}

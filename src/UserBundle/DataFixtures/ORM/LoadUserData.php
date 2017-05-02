@@ -26,6 +26,7 @@ class LoadUsers extends AbstractFixture implements OrderedFixtureInterface, Cont
         $user->setUsername('user');
         $user->setEmail('user@domain.com');
         $user->setPlainPassword('user_password');
+        $user->setSalt(md5(uniqid()));
         $user->setEnabled(true);
 
         $manager->persist($user);

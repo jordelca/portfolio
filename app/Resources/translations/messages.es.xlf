@@ -38,6 +38,10 @@
                 <source>header.logout</source>
                 <target>Salir</target>
             </trans-unit>
+            <trans-unit id="10">
+                <source>header.certifications</source>
+                <target>Certificaciones</target>
+            </trans-unit>
 
         </body>
     </file>
